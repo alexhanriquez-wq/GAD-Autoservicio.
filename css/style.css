@@ -235,6 +235,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
 .contact-detail h3 { margin: 1px 0 5px; font-size: 15px; }
 .contact-detail p { margin: 0; color: #514653; font-size: 13px; }
 .detail-pending { display: block; margin-top: 6px; color: var(--violet-mid); font-size: 11px; }
+.contact-hours { white-space: pre-line; }
 .pending-banner { padding: 12px 15px; border-left: 3px solid var(--violet-mid); background: var(--lilac); }
 .delivery-panel { display: grid; grid-template-columns: 1fr minmax(280px, .72fr); align-items: center; gap: 48px; margin-top: 52px; padding: 30px; background: var(--paper); }
 .delivery-panel > div:first-child > p:last-child { max-width: 520px; margin: 12px 0 0; color: var(--muted); font-size: 13px; }

@@ -17,7 +17,7 @@ function renderProducts() {
 		const row = document.createElement("tr");
 		const empty = document.createElement("td");
 		empty.colSpan = 4;
-		empty.textContent = products.length ? "No hay productos que coincidan con la búsqueda." : "Los archivos JSON no contienen productos.";
+		empty.textContent = products.length ? "No hay productos que coincidan con la búsqueda." : "Todavía no hay productos disponibles.";
 		row.append(empty);
 		tableBody.append(row);
 		return;
@@ -41,13 +41,13 @@ function renderProducts() {
 document.querySelectorAll("[data-business-name]").forEach((element) => { element.textContent = BUSINESS_NAME; });
 searchInput.addEventListener("input", renderProducts);
 productCount.textContent = "…";
-feedback.textContent = "Cargando precios y productos desde los archivos JSON…";
+feedback.textContent = "Cargando catálogo…";
 
 loadJsonProducts()
 	.then((catalog) => {
 		products = catalog;
 		productCount.textContent = String(products.length);
-		feedback.textContent = "Vista de solo lectura. Para actualizar el catálogo, editá los archivos JSON de la raíz del proyecto y volvé a publicarlos.";
+		feedback.textContent = "Vista de solo lectura.";
 		renderProducts();
 	})
 	.catch((error) => {

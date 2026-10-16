@@ -69,9 +69,9 @@ loadJsonProducts()
 		renderCategoryFilters(categoryFilters, catalogProducts, category);
 		catalogState = catalogProducts.length ? "live" : "empty";
 		if (catalogProducts.length === 0) {
-			setSourceNotice("No hay productos disponibles en los archivos JSON.", "empty");
-		} else {
-			setSourceNotice("Catálogo cargado desde los archivos JSON.", "live");
+			setSourceNotice(offers ? "Todavía no hay ofertas publicadas." : "Todavía no hay productos publicados.", "empty");
+		} else if (sourceNotice) {
+			sourceNotice.hidden = true;
 		}
 		render();
 	})

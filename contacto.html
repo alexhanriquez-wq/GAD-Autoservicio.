@@ -3,14 +3,19 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Ubicación, horarios y datos de atención pendientes de confirmación de GAD en Campo Largo, Chaco.">
+	<meta name="description" content="Ubicación, horarios y datos de atención de GAD en Campo Largo, Chaco.">
 	<meta name="theme-color" content="#217a55">
 	<title>Contacto | GAD</title>
 	<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+	<link rel="manifest" href="manifest.webmanifest">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="default">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/responsive.css">
 	<link rel="stylesheet" href="css/cart.css">
 	<script type="module" src="js/cart.js"></script>
+	<script type="module" src="js/contact.js"></script>
+	<script type="module" src="js/pwa.js"></script>
 </head>
 <body>
 	<a class="skip-link" href="#contenido">Ir al contenido</a>
@@ -20,17 +25,17 @@
 		<nav class="main-nav" aria-label="Navegación principal"><div class="wrap nav-inner"><a href="index.html">Inicio</a><a href="productos.html">Productos</a><a href="ofertas.html">Ofertas</a><a class="nav-active" href="contacto.html" aria-current="page">Contacto</a><span class="nav-location"><span aria-hidden="true">📍</span> Campo Largo, Chaco</span></div></nav>
 	</header>
 	<main id="contenido">
-		<section class="inner-hero contact-hero"><div class="wrap"><p class="eyebrow">CERCA DE CASA</p><h1>Pasá a saludarnos.</h1><p>Encontranos en Campo Largo, Chaco. Los datos de atención y ubicación exacta están pendientes de confirmar.</p></div></section>
-		<section class="contact-area" id="contact-info"><div class="wrap"><div class="contact-intro"><p class="eyebrow">INFORMACIÓN PARA TU VISITA</p><h2>Te esperamos en el barrio</h2><p class="pending-banner">La dirección exacta, los horarios y los canales de contacto se completarán cuando el autoservicio confirme sus datos.</p></div>
+		<section class="inner-hero contact-hero"><div class="wrap"><p class="eyebrow">CERCA DE CASA</p><h1>Pasá a saludarnos.</h1><p data-contact-hero>Encontranos en Campo Largo, Chaco.</p></div></section>
+		<section class="contact-area" id="contact-info"><div class="wrap"><div class="contact-intro"><p class="eyebrow">INFORMACIÓN PARA TU VISITA</p><h2>Te esperamos en el barrio</h2><p class="pending-banner" data-contact-status role="status" aria-live="polite">Cargando los datos de contacto…</p></div>
 			<div class="contact-grid">
-				<section class="contact-detail"><span class="contact-symbol" aria-hidden="true">📍</span><div><h3>Ubicación</h3><p>Campo Largo, Chaco</p><span class="detail-pending">Dirección exacta pendiente de confirmar</span></div></section>
-				<section class="contact-detail"><span class="contact-symbol" aria-hidden="true">🕒</span><div><h3>Horarios de atención</h3><p>Días y horarios pendientes</p><span class="detail-pending">Confirmar antes de publicar</span></div></section>
-				<section class="contact-detail"><span class="contact-symbol" aria-hidden="true">💬</span><div><h3>WhatsApp</h3><p>Número de consultas pendiente</p><span class="detail-pending">El enlace se activará con el número oficial</span></div></section>
-				<section class="contact-detail"><span class="contact-symbol" aria-hidden="true">🛍️</span><div><h3>Compras y entregas</h3><p>Modalidades por confirmar</p><span class="detail-pending">Retiro y posibles entregas a definir</span></div></section>
+				<section class="contact-detail"><span class="contact-symbol" aria-hidden="true">📍</span><div><h3>Ubicación</h3><p data-contact-address>Campo Largo, Chaco</p><a class="detail-pending" data-contact-map hidden target="_blank" rel="noopener noreferrer">Cómo llegar</a></div></section>
+				<section class="contact-detail"><span class="contact-symbol" aria-hidden="true">🕒</span><div><h3>Horarios de atención</h3><p class="contact-hours" data-contact-hours>Consultando horarios…</p></div></section>
+				<section class="contact-detail"><span class="contact-symbol" aria-hidden="true">💬</span><div><h3>WhatsApp</h3><p><a data-contact-whatsapp hidden target="_blank" rel="noopener noreferrer"></a><span data-contact-phone>Consultando número…</span></p></div></section>
+				<section class="contact-detail"><span class="contact-symbol" aria-hidden="true">✉️</span><div><h3>Correo electrónico</h3><p><a data-contact-email hidden></a><span data-contact-email-empty hidden>No informado</span></p></div></section>
 			</div>
-			<div class="delivery-panel"><div><p class="eyebrow">VISITANOS</p><h2>Un autoservicio cerca tuyo.</h2><p>La dirección exacta y las opciones de compra, retiro o entrega se publicarán cuando estén confirmadas.</p></div><div class="map-placeholder" role="img" aria-label="Espacio reservado para incorporar un mapa con la ubicación confirmada del autoservicio"><span aria-hidden="true">📍</span><strong>Mapa pendiente</strong><small>Agregar dirección confirmada</small></div></div>
+			<div class="delivery-panel"><div><p class="eyebrow">VISITANOS</p><h2>Un autoservicio cerca tuyo.</h2><p data-contact-location-summary>Encontranos en Campo Largo, Chaco.</p></div><div class="map-placeholder" data-contact-map-placeholder role="img" aria-label="Ubicación del autoservicio pendiente de confirmar"><span aria-hidden="true">📍</span><strong>Mapa pendiente</strong><small>Agregar dirección confirmada</small></div></div>
 		</div></section>
 	</main>
-	<footer class="site-footer"><div class="wrap footer-main"><div class="footer-brand-block"><a class="brand brand-footer" href="index.html"><img src="assets/logo.svg" width="48" height="48" alt=""><span class="brand-copy"><strong data-business-name>GAD</strong><span>AUTOSERVICIO</span></span></a><p>Compras de todos los días<br>Campo Largo, Chaco, Argentina</p></div><div class="footer-column"><h2>Explorá</h2><a href="index.html">Inicio</a><a href="productos.html">Productos</a><a href="ofertas.html">Ofertas</a><a href="contacto.html">Contacto</a></div><div class="footer-column"><h2>Visitanos</h2><p>Dirección y horarios</p><span>Pendientes de confirmar</span></div></div><div class="footer-bottom"><div class="wrap"><span>© <span data-current-year>2026</span> <span data-business-name>GAD</span></span><span>Información pendiente de confirmar.</span></div></div></footer>
+	<footer class="site-footer"><div class="wrap footer-main"><div class="footer-brand-block"><a class="brand brand-footer" href="index.html"><img src="assets/logo.svg" width="48" height="48" alt=""><span class="brand-copy"><strong data-business-name>GAD</strong><span>AUTOSERVICIO</span></span></a><p>Compras de todos los días<br><span data-contact-footer-address>Campo Largo, Chaco, Argentina</span></p></div><div class="footer-column"><h2>Explorá</h2><a href="index.html">Inicio</a><a href="productos.html">Productos</a><a href="ofertas.html">Ofertas</a><a href="contacto.html">Contacto</a></div><div class="footer-column"><h2>Visitanos</h2><p data-contact-footer-address>Dirección</p><p data-contact-footer-hours>Horarios de atención</p><span data-contact-footer-phone></span></div></div><div class="footer-bottom"><div class="wrap"><span>© <span data-current-year>2026</span> <span data-business-name>GAD</span></span><span>Información de contacto.</span></div></div></footer>
 </body>
 </html>

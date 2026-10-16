@@ -182,6 +182,10 @@ export function initCartPage() {
 	const summary = document.querySelector("[data-cart-summary]");
 	const subtotalElement = document.querySelector("[data-cart-subtotal]");
 	const totalElement = document.querySelector("[data-cart-total]");
+	const whatsappButton = document.querySelector("[data-whatsapp-order]");
+	const orderContactStatus = document.querySelector("[data-order-contact-status]");
+	const root = new URL("../", import.meta.url);
+	let orderPhone;
 	const refresh = () => {
 		const cart = readCart();
 		const total = cart.reduce((sum, item) => sum + item.unitPrice * item.quantity, 0);
@@ -212,11 +216,38 @@ export function initCartPage() {
 		clearCart();
 		refresh();
 	});
+	whatsappButton?.addEventListener("click", () => {
+		if (!orderPhone) return;
+		const cart = readCart();
+		if (cart.length === 0) return;
+		const total = cart.reduce((sum, item) => sum + item.unitPrice * item.quantity, 0);
+		const lines = cart.map((item) => `• ${item.name} x${item.quantity} — ${formatCurrency(item.unitPrice * item.quantity)}`);
+		const message = [`Hola, quiero hacer este pedido:`, "", ...lines, "", `Total estimado: ${formatCurrency(total)}`, "Precios y disponibilidad sujetos a confirmación."].join("\n");
+		window.open(`https://wa.me/${orderPhone}?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
+	});
 	document.addEventListener("gad:cart-change", refresh);
 	window.addEventListener("storage", (event) => {
 		if (event.key === CART_STORAGE_KEY) refresh();
 	});
 	refresh();
+	if (whatsappButton) {
+		fetch(new URL("pedidos.json", root), { cache: "no-store" })
+			.then((response) => {
+				if (!response.ok) throw new Error(`No se pudo cargar pedidos.json (HTTP ${response.status}).`);
+				return response.json();
+			})
+			.then((data) => {
+				const phone = typeof data.telefono_pedidos === "string" ? data.telefono_pedidos.replace(/\D/g, "") : "";
+				if (!/^\d{8,15}$/.test(phone)) throw new TypeError("pedidos.json debe incluir un teléfono válido en telefono_pedidos.");
+				orderPhone = phone;
+				whatsappButton.disabled = false;
+				if (orderContactStatus) orderContactStatus.textContent = "Se abrirá WhatsApp para enviar tu pedido.";
+			})
+			.catch((error) => {
+				console.error("No se pudo configurar el teléfono para pedidos:", error);
+				if (orderContactStatus) orderContactStatus.textContent = `No se pudo cargar el teléfono para pedidos: ${error.message}`;
+			});
+	}
 }
 
 document.addEventListener("click", (event) => {

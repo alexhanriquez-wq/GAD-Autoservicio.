@@ -90,9 +90,9 @@ loadJsonProducts()
 		renderCategoryFilters(categoryFilters, catalogProducts, activeCategory);
 		catalogState = catalogProducts.length ? "live" : "empty";
 		if (catalogProducts.length === 0) {
-			setSourceNotice("No hay productos con precio minorista disponibles en los archivos JSON.", "empty");
-		} else {
-			setSourceNotice("Catálogo cargado desde los archivos JSON.", "live");
+			setSourceNotice("Todavía no hay productos disponibles.", "empty");
+		} else if (sourceNotice) {
+			sourceNotice.hidden = true;
 		}
 		renderProducts();
 	})

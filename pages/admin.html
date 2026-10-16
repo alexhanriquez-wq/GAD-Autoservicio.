@@ -7,10 +7,15 @@
 	<meta name="theme-color" content="#217a55">
 	<title>Catálogo local | GAD</title>
 	<link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
+	<link rel="manifest" href="../manifest.webmanifest">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="default">
 	<link rel="stylesheet" href="../css/style.css">
 	<link rel="stylesheet" href="../css/responsive.css">
 	<link rel="stylesheet" href="../css/admin.css">
 	<script type="module" src="../js/admin.js"></script>
+	<script type="module" src="../js/contact.js"></script>
+	<script type="module" src="../js/pwa.js"></script>
 </head>
 <body class="admin-page">
 	<a class="skip-link" href="#contenido">Ir al contenido</a>
@@ -33,6 +38,6 @@
 			<p class="admin-feedback" data-admin-feedback role="status" aria-live="polite"></p>
 		</section>
 	</main>
-	<footer class="admin-footer"><div class="wrap"><span data-business-name>GAD</span> · Catálogo leído desde archivos JSON locales.</div></footer>
+	<footer class="admin-footer"><div class="wrap admin-footer-content"><span data-business-name>GAD</span><div><strong>Visitanos</strong><span data-contact-footer-address>Dirección</span><span data-contact-footer-hours>Horarios</span></div></div></footer>
 </body>
 </html>
