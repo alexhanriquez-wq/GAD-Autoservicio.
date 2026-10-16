@@ -21,6 +21,17 @@
     "precio_minorista": 44000.0,
     "precio_mayorista": null
   },
+  "7799155001408": {
+    "codigo_barras": "7799155001408",
+    "nombre": "LEVITE POMELO ROSADO 2.15",
+    "categoria": "Bebidas sin Alcohol",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZ0umEBIWlxuP2kuGGgzEG4QOn3EJPbhorBNBmtJdvgsj94rQq-QeMlAs&s=10",
+    "descripcion": "",
+    "oferta": true,
+    "destacado": false,
+    "precio_minorista": 2600.0,
+    "precio_mayorista": null
+  },
   "961": {
     "codigo_barras": "961",
     "nombre": "KETEROLAX",
