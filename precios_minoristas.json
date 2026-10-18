@@ -14,6 +14,11 @@
     "nombre": "LEVITE POMELO ROSADO 2.15",
     "precio": 2600.0
   },
+  "960": {
+    "codigo_barras": "960",
+    "nombre": "TAFIROL FORTE",
+    "precio": 55.0
+  },
   "961": {
     "codigo_barras": "961",
     "nombre": "KETEROLAX",
