@@ -32,6 +32,17 @@
     "precio_minorista": 2600.0,
     "precio_mayorista": null
   },
+  "960": {
+    "codigo_barras": "960",
+    "nombre": "TAFIROL FORTE",
+    "categoria": "ANALGESICOS",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQ-cUHJKiyoE-8Bs35CmfcjzaYQwIrQkwaXiZRV242OQ&s=10",
+    "descripcion": "se vende por unidad",
+    "oferta": false,
+    "destacado": false,
+    "precio_minorista": 55.0,
+    "precio_mayorista": null
+  },
   "961": {
     "codigo_barras": "961",
     "nombre": "KETEROLAX",
